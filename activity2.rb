@@ -30,7 +30,7 @@ p valid_date?("2023-03-15")
 p valid_date?("15-03-2023")
 
 def parse_log_entry(log)
-    pattern = /(?<date>\d{4}-\d{2}-\d{2})\s(?<time>\d{2}:\d{2}:\d{2})\s\[(?<log_level>\w+)\]\s(?<message>.+)/
+    pattern = pattern = /^(INFO|WARN|ERROR): (.+)$/
     match = log.match(pattern)
     [match[1], match[2]] if match
 end
